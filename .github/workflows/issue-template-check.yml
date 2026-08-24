@@ -65,10 +65,10 @@ jobs:
 
             const ddl = requiredSection('截止时间（DDL）');
             const ddlMatch = ddl.match(
-              /^(\d{4})-(\d{2})-(\d{2}) ([01]\d|2[0-3]):([0-5]\d) UTC\+8$/
+              /^(\d{4})-(\d{2})-(\d{2}) ([01]\d|2[0-3]):([0-5]\d)$/
             );
             if (ddl && !ddlMatch) {
-              errors.push('“截止时间（DDL）”格式必须为 `YYYY-MM-DD HH:mm UTC+8`。');
+              errors.push('“截止时间（DDL）”格式必须为 `YYYY-MM-DD HH:mm`，无需填写时区。');
             } else if (ddlMatch) {
               const [, year, month, day] = ddlMatch.map(Number);
               const daysInMonth = new Date(Date.UTC(year, month, 0)).getUTCDate();
