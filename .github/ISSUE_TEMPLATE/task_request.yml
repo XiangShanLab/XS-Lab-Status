@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        请完整填写以下内容。执行人评论 `/assign` 后，由 Issue 发布者回复 `/confirm` 确认认领。
+        请完整填写以下内容。执行人评论 `/assign` 后，由 Issue 发布者回复 `/confirm` 确认认领；完成后由执行人评论 `/complete` 发起审查。
 
   - type: textarea
     id: goal
