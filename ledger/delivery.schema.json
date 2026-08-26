@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "delivery.schema.json",
+  "title": "DeliveryIssueMetadata",
+  "type": "object",
+  "required": ["type", "issue", "completion_percent", "is_delayed", "actual_finished_at", "deliverable_links"],
+  "properties": {
+    "type": {"const": "delivery"},
+    "issue": {"type": "string", "minLength": 1},
+    "completion_percent": {"type": "number", "minimum": 0, "maximum": 100},
+    "is_delayed": {"type": "boolean"},
+    "actual_finished_at": {"type": "string", "format": "date-time"},
+    "deliverable_links": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "additionalProperties": true
+}
